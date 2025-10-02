@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Fix text visibility issues */
+@layer base {
+  /* Make sure all text is dark by default in light mode */
+  body {
+    @apply text-gray-900;
+  }
+  
+  /* Override any light gray text to be darker */
+  .text-gray-500 {
+    @apply text-gray-800;
+  }
+  
+  .text-gray-600 {
+    @apply text-gray-900;
+  }
+  
+  .text-gray-700 {
+    @apply text-gray-900;
+  }
+  
+  /* Ensure input text is dark */
+  input, textarea, select {
+    @apply text-gray-900;
+  }
+  
+  /* Make placeholder text more visible */
+  ::placeholder {
+    @apply text-gray-700;
+  }
+  
+  /* Force all text to be dark unless explicitly overridden */
+  * {
+    @apply text-gray-900;
+  }
+}
