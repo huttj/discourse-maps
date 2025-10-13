@@ -2,6 +2,8 @@
 
 A simple AI-powered interface for data modeling with chat integration.
 
+![](screenshot.png)
+
 ## Features
 
 - **Main Data Display**: Shows the current state of your model data in a formatted JSON view
